@@ -1,0 +1,47 @@
+<div ng-controller="cardController" ng-cloak id="card-component"  >
+  <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="card in cards">
+  <md-content class="md-padding" layout-xs="column" layout="row" >
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <img ng-src={{card.img}}></img>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <ul>
+        <li >
+        <span>{{card.name}}</span>
+        <br>
+        <span>{{card.desc}}</span>
+        </li>
+       </ul>
+        <!-- <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions> -->
+      </md-card>
+    </div>
+    <!-- <div flex-xs flex-gt-xs="50" layout="column">
+      <div layout layout-padding layout-align="center end" style="height:200px">
+        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+      </div>
+    </div> -->
+  </md-content>
+</div>
+
+<style>
+ #card-component .card-media {
+   bottom:100;
+   height:100px;
+  background-color: #999999; }
+
+#card-component .card-media img {
+  width: 150px;
+    height: 100px;
+}
+
+</style>
